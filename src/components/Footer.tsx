@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import { Mail, Linkedin, Youtube } from "lucide-react";
 import Button from "./ui/button";
