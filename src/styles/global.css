@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy-50: #f8fafc;
+  --navy-100: #f1f5f9;
+  --navy-200: #e2e8f0;
+  --navy-300: #cbd5e1;
+  --navy-400: #94a3b8;
+  --navy-500: #64748b;
+  --navy-600: #475569;
+  --navy-700: #334155;
+  --navy-800: #1e293b;
+  --navy-900: #0f172a;
+
+  --purple-50: #faf5ff;
+  --purple-100: #f3e8ff;
+  --purple-200: #e9d5ff;
+  --purple-300: #d8b4fe;
+  --purple-400: #c084fc;
+  --purple-500: #a855f7;
+  --purple-600: #9333ea;
+  --purple-700: #7c3aed;
+  --purple-800: #6b21a8;
+  --purple-900: #581c87;
+
+  --cyan-50: #ecfeff;
+  --cyan-100: #cffafe;
+  --cyan-200: #a5f3fc;
+  --cyan-300: #67e8f9;
+  --cyan-400: #22d3ee;
+  --cyan-500: #06b6d4;
+  --cyan-600: #0891b2;
+  --cyan-700: #0e7490;
+  --cyan-800: #155e75;
+  --cyan-900: #164e63;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .container-large {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-white font-semibold bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-navy-800 font-semibold bg-white hover:bg-navy-50 border border-navy-200 rounded-lg transition-colors duration-200;
+  }
+
+  .text-gradient-primary {
+    @apply bg-gradient-to-b from-[#001aff] to-[#02059d] bg-clip-text text-transparent;
+    -webkit-text-fill-color: transparent;
+    /* @apply bg-gradient-to-r from-purple-600 to-cyan-500 bg-clip-text text-transparent; */
+  }
+
+  .bg-gradient-cyan-blue {
+    @apply bg-gradient-to-r from-cyan-500 to-purple-600;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-fade-in-down {
+    animation: fadeInDown 0.3s ease-out;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@theme {
+  --width-392: 392px;
+  --width-420: 420px;
+  --width-480: 480px;
+
+  /* Custom Font Sizes */
+  --text-text9: 9px;
+  --text-text10: 10px;
+  --text-text11: 11px;
+  --text-text13: 13px;
+  --text-text15: 15px;
+  --text-text26: 25.93px;
+  --text-text32: 32px;
+  --text-text33: 33px;
+  --text-text43: 43px;
+}
