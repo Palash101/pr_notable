@@ -25,6 +25,7 @@ export default {
       },
       fontSize: {
         xs: ["0.75rem", { lineHeight: "1rem" }],
+        text15: ["15px", { lineHeight: "15px" }],
         sm: ["0.875rem", { lineHeight: "1.25rem" }],
         base: ["1rem", { lineHeight: "1.5rem" }],
         lg: ["1.125rem", { lineHeight: "1.75rem" }],
@@ -129,6 +130,7 @@ export default {
         },
         gray: {
           lightGrey: "#8087c2",
+          medium: "#5c5f87",
         },
       },
       // borderRadius: {

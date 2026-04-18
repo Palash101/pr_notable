@@ -148,7 +148,7 @@ const CardRow = ({ card, idx }: { card: Card; idx: number }) => {
           style={{ zIndex: cards.length - idx }} // Higher z-index for earlier cards
         >
           {/* Card Header - Always visible */}
-          <div className="absolute top-0 left-0 right-0 z-10 p-4 border-b border-gray-100 bg-white">
+          <div className="absolute top-0 left-0 right-0 z-10 p-4 border-b border-gray-100 rounded-2xl bg-white">
             <div className="flex items-center gap-3">
               <SquareAsterisk className={`w-6 h-6 ${colorScheme.iconColor}`} />
               <span className={`${colorScheme.iconColor} text-base font-normal`}>{card.label}</span>

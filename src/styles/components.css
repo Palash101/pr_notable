@@ -104,10 +104,10 @@
 
 .flowbuilder-hero_orb {
   position: absolute;
-  top: -40%;
-  left: 18%;
-  width: 350px;
-  height: 350px;
+  top: -38%;
+  left: 13%;
+  width: 320px;
+  height: 320px;
   object-fit: contain;
   z-index: -1;
 }
@@ -161,7 +161,7 @@
   font-size: 2.5rem;
   font-weight: 300;
   line-height: 1.2;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .text-wrap-balance {

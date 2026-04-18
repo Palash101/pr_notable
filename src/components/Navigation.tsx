@@ -198,7 +198,7 @@ const Navigation = () => {
               </div>
             </Link>
             <Link
-              href="/platform/flow-builder"
+              href="/ai-platform/flow-builder"
               className="flex items-center justify-start gap-4 group/item"
             >
               <div className="text-blue-default">
@@ -230,7 +230,7 @@ const Navigation = () => {
               </div>
             </Link>
             <Link
-              href="/platform/integrations"
+              href="/ai-platform/integrations"
               className="flex items-center justify-start gap-4 group/item"
             >
               <div className="text-blue-default">
@@ -428,7 +428,7 @@ const Navigation = () => {
               </div>
             </Link>
             <Link
-              href="/platform/flow-builder"
+              href="/ai-platform/flow-builder"
               className="flex items-center justify-start gap-4 group/item"
             >
               <div className="text-blue-default">
@@ -454,7 +454,7 @@ const Navigation = () => {
               </div>
             </Link>
             <Link
-              href="/platform/integrations"
+              href="/ai-platform/integrations"
               className="flex items-center justify-start gap-4 group/item"
             >
               <div className="text-blue-default">
@@ -879,7 +879,7 @@ const Navigation = () => {
                             AI Agents
                           </Link>
                           <Link
-                            href="/platform/flow-builder"
+                            href="/ai-platform/flow-builder"
                             className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
                           >
                             Flow Builder
@@ -891,7 +891,7 @@ const Navigation = () => {
                             Sidekick
                           </Link>
                           <Link
-                            href="/platform/integrations"
+                            href="/ai-platform/integrations"
                             className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
                           >
                             Integrations
