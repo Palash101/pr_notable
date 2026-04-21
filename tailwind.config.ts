@@ -130,6 +130,7 @@ export default {
         },
         gray: {
           lightGrey: "#8087c2",
+          cream: "#faf8f7",
           medium: "#5c5f87",
         },
       },

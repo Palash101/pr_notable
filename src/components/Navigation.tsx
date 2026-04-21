@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
@@ -246,7 +246,7 @@ const Navigation = () => {
               </div>
             </Link>
             <Link
-              href="/platform/security"
+              href="/trust"
               className="flex items-center justify-start gap-4 group/item"
             >
               <div className="text-blue-default">

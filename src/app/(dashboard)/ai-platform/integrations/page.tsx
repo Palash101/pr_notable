@@ -1,7 +1,7 @@
-import TestimonialSlider from "@/components/Integartion/gillete";
-import IntegrationsFeatures from "@/components/Integartion/integratiion-features";
-import IntegrationsHero from "@/components/Integartion/integration-hero";
-import IntegrationTrust from "@/components/Integartion/trust";
+import IntegrationsFeatures from "@/components/Integration/integratiion-features";
+import IntegrationGillete from "@/components/Integration/integration-gillete";
+import IntegrationsHero from "@/components/Integration/integration-hero";
+import IntegrationTrust from "@/components/Integration/trust";
 
 export default function IntegrationsPage() {
   return (
@@ -9,9 +9,8 @@ export default function IntegrationsPage() {
       <IntegrationsHero />
       <IntegrationsFeatures />
       <IntegrationTrust />
-      {/* <TestimonialSlider /> */}
+      <IntegrationGillete />
     </main>
   );
 }
 
-// bg-[#060639]

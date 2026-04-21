@@ -53,9 +53,9 @@ const features = [
 
 const IntegrationTrust = () => {
   return (
-    <div className="h-full section-padding bg-[#faf8f7]">
+    <div className="h-full section-padding bg-gray-cream">
       <div className="container-large">
-        <div className="space-y-6 animate-fade-in ">
+        <div className="space-y-6 animate-fade-in">
           <h4 className="text-lg font-medium text-darkBlue leading-relaxed">
             TRUST & SECURITY
           </h4>
