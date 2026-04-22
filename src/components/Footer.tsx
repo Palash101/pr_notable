@@ -6,10 +6,10 @@ import Button from "./ui/button";
 const Footer = () => {
   const footerLinks = {
     "AI Platform": [
-      { label: "Overview", href: "/ai-platform/overview" },
-      { label: "Integrations", href: "/ai-platform/integrations" },
-      { label: "Sidekick", href: "/ai-platform/sidekick" },
-      { label: "Flow Builder", href: "/ai-platform/flow-builder" },
+      { label: "Overview", href: "/platform/overview" },
+      { label: "Integrations", href: "/platform/integrations" },
+      { label: "Sidekick", href: "/platform/sidekick" },
+      { label: "Flow Builder", href: "/platform/flow-builder" },
       { label: "Security Center", href: "https://trust.PrimumAihealth.com" },
     ],
     Customers: [{ label: "Customer Stories", href: "/customer-stories" }],

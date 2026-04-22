@@ -198,7 +198,7 @@ const Navigation = () => {
               </div>
             </Link>
             <Link
-              href="/ai-platform/flow-builder"
+              href="/platform/flow-builder"
               className="flex items-center justify-start gap-4 group/item"
             >
               <div className="text-blue-default">
@@ -230,7 +230,7 @@ const Navigation = () => {
               </div>
             </Link>
             <Link
-              href="/ai-platform/integrations"
+              href="/platform/integrations"
               className="flex items-center justify-start gap-4 group/item"
             >
               <div className="text-blue-default">
@@ -428,7 +428,7 @@ const Navigation = () => {
               </div>
             </Link>
             <Link
-              href="/ai-platform/flow-builder"
+              href="/platform/flow-builder"
               className="flex items-center justify-start gap-4 group/item"
             >
               <div className="text-blue-default">
@@ -454,7 +454,7 @@ const Navigation = () => {
               </div>
             </Link>
             <Link
-              href="/ai-platform/integrations"
+              href="/platform/integrations"
               className="flex items-center justify-start gap-4 group/item"
             >
               <div className="text-blue-default">
@@ -714,19 +714,19 @@ const Navigation = () => {
                       AI Agents
                     </Link>
                     <Link
-                      href="/ai-platform/flow-builder"
+                      href="/platform/flow-builder"
                       className="block px-4 py-2 text-navy-600 hover:text-purple text-sm font-medium"
                     >
                       Flow Builder
                     </Link>
                     <Link
-                      href="/ai-platform/sidekick"
+                      href="/platform/sidekick"
                       className="block px-4 py-2 text-navy-600 hover:text-purple text-sm font-medium"
                     >
                       Sidekick
                     </Link>
                     <Link
-                      href="/ai-platform/integrations"
+                      href="/platform/integrations"
                       className="block px-4 py-2 text-navy-600 hover:text-purple text-sm font-medium"
                     >
                       Integrations
@@ -879,7 +879,7 @@ const Navigation = () => {
                             AI Agents
                           </Link>
                           <Link
-                            href="/ai-platform/flow-builder"
+                            href="/platform/flow-builder"
                             className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
                           >
                             Flow Builder
@@ -891,7 +891,7 @@ const Navigation = () => {
                             Sidekick
                           </Link>
                           <Link
-                            href="/ai-platform/integrations"
+                            href="/platform/integrations"
                             className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
                           >
                             Integrations

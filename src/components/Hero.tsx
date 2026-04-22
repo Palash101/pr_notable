@@ -48,9 +48,14 @@ const Hero = () => {
 
                 {/* CTAs */}
                 <div className="mt-8 flex items-center gap-4">
-                  <Button variant="default" className="text-white">Request a demo</Button>
+                  <Button variant="default" className="text-white">
+                    Request a demo
+                  </Button>
 
-                  <Button variant="outline" className="py-1 text-gradient-primary">
+                  <Button
+                    variant="outline"
+                    className="py-1 text-gradient-primary"
+                  >
                     Watch video
                   </Button>
                 </div>
