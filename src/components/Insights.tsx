@@ -14,6 +14,10 @@ interface StatCard {
   companyLogo: React.ReactNode;
 }
 
+type InsightsProps = {
+  analyticsData?: boolean;
+};
+
 const CatholicHealthLogo = () => (
   <div className="flex items-center gap-2">
     <svg
@@ -118,7 +122,7 @@ const statCards: StatCard[] = [
 
 const AUTO_SLIDE_INTERVAL = 3000;
 
-const Insights = () => {
+const Insights = ({ analyticsData = false }: InsightsProps) => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [progress, setProgress] = useState(0);
 
@@ -289,21 +293,23 @@ const Insights = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-4">
-          {[
-            { value: "12K", label: "sites of care" },
-            { value: "38M", label: "Total patients served" },
-            { value: "97%", label: "patient satisfaction" },
-            { value: "1.5M", label: "tasks automated daily" },
-          ].map((stat, idx) => (
-            <div key={idx} className="text-center">
-              <p className="text-3xl md:text-5xl font-normal text-blue-default mb-2">
-                {stat.value}
-              </p>
-              <p className="text-gray-lightGrey uppercase">{stat.label}</p>
-            </div>
-          ))}
-        </div>
+        {analyticsData && (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-4">
+            {[
+              { value: "12K", label: "sites of care" },
+              { value: "38M", label: "Total patients served" },
+              { value: "97%", label: "patient satisfaction" },
+              { value: "1.5M", label: "tasks automated daily" },
+            ].map((stat, idx) => (
+              <div key={idx} className="text-center">
+                <p className="text-3xl md:text-5xl font-normal text-blue-default mb-2">
+                  {stat.value}
+                </p>
+                <p className="text-gray-lightGrey uppercase">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
       <div className="divider-gradient my-12" />
     </section>

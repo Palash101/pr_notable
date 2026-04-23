@@ -415,7 +415,7 @@ const Navigation = () => {
           </p>
           <div className="space-y-10 mx-5">
             <Link
-              href="/platform/ai-agents"
+              href="/solutions/patient-access"
               className="flex items-center justify-start gap-4 group/item"
             >
               <div className="text-blue-default">

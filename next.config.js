@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ["cdn.prod.website-files.com"],
+    domains: ["images.unsplash.com"],
   },
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,

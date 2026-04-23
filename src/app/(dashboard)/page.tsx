@@ -13,7 +13,9 @@ export default function Dashboard() {
       <Hero />
 
       {/* Trusted By Section */}
-      <TrustedBy />
+      <div className="w-full max-w-7xl mx-auto">
+        <TrustedBy headingPreview={true} />
+      </div>
 
       {/* Sticky Stack - Use Cases */}
       <StickyStack />
@@ -22,7 +24,7 @@ export default function Dashboard() {
       <PlatformFeature />
 
       {/* Insights & Stats */}
-      <Insights />
+      <Insights analyticsData={true} />
 
       <Resources />
     </>
