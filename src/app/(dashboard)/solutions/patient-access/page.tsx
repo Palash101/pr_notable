@@ -85,7 +85,8 @@ const PatientAccess = () => {
 
       <PatientAccessFeatures />
 
-      <div className="section-padding bg-[#f3f3f3]">
+      {/* <div className="section-padding bg-[#f3f3f3]"> */}
+      <div className="section-padding bg-gradient-to-br from-[#f0f4ff] to-[#e8e0f0]">
         <PatientsInsights />
 
         <div className="divider-gradient my-12" />

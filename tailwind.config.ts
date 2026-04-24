@@ -105,6 +105,7 @@ export default {
         },
         purple: {
           DEFAULT: "#8548DB",
+          accessLight: "#f9f6fd",
           superLight: "#b989fd",
           light: "#6330aa",
           dark: "#6b2fa8",
