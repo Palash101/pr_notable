@@ -12,7 +12,7 @@ const Hero = () => {
       <section className="relative overflow-hidden bg-white p-3">
         <div className="container">
           <div className="flex flex-col gap-20">
-            <div className="top-banner">
+            <div className="top-banner hidden md:flex">
               <span className="pl-10">
                 Join PrimumAi in Chicago at Becker’s Annual Meeting 2026
                 <span className="date"> April 13–16 | Booth 237</span>
@@ -30,7 +30,7 @@ const Hero = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left Content */}
-              <div className="space-y-6 animate-fade-in ">
+              <div className="space-y-6 animate-fade-in order-2 lg:order-1">
                 <h1 className="text-text43">
                   <span className="text-gradient-primary font-poppins font-light">
                     The AI Platform
@@ -47,14 +47,14 @@ const Hero = () => {
                 </p>
 
                 {/* CTAs */}
-                <div className="mt-8 flex items-center gap-4">
-                  <Button variant="default" className="text-white">
+                <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
+                  <Button variant="default" className="text-white w-full sm:w-auto">
                     Request a demo
                   </Button>
 
                   <Button
                     variant="outline"
-                    className="py-1 text-gradient-primary"
+                    className="py-1 text-gradient-primary w-full sm:w-auto"
                   >
                     Watch video
                   </Button>
@@ -63,7 +63,7 @@ const Hero = () => {
 
               {/* Right Content - Placeholder for animation */}
               <div
-                className={`group-hover:scale-125 transition-transform duration-500 animate-pulse-hard`}
+                className={`group-hover:scale-125 transition-transform duration-500 animate-pulse-hard order-1 lg:order-2`}
               >
                 <Image
                   src="/images/ai-platform.svg"

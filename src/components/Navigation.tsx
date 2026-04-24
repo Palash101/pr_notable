@@ -267,6 +267,391 @@ const Navigation = () => {
     </div>
   );
 
+  // Mobile Platform dropdown content
+  const MobilePlatformDropdown = () => (
+    <div className="bg-white px-4 py-6">
+      <div className="flex flex-col gap-4">
+        {/* Hero section */}
+        <div className="px-3 py-3">
+          <div className="rounded-xl overflow-hidden mb-4">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ksG7tg39ZTLNhDLJM4QK5OIO0UtT4A.png"
+              alt="Platform visualization"
+              className="w-full h-[180px] object-cover object-top"
+            />
+          </div>
+          <h3 className="text-2xl font-normal text-blue-default mb-2">
+            Build tomorrow&apos;s
+            <br />
+            workforce <span className="text-darkBlue">today</span>
+          </h3>
+          <p className="text-gray-lightGrey font-normal text-sm mb-4 leading-relaxed">
+            Empower your organization with intelligent automation that delivers
+            proven ROI, enhances productivity, and supports sustainable growth.
+          </p>
+          <Link
+            href="/platform"
+            className="inline-flex items-center gap-2 text-darkBlue font-medium text-sm hover:gap-3 transition-all"
+          >
+            Learn more about our Platform <ChevronRight size={16} />
+          </Link>
+        </div>
+
+        {/* Features with icons and descriptions */}
+        <div className="px-3 py-3">
+          <p className="text-xs font-normal text-gray-lightGrey mb-3">FEATURES</p>
+          <div className="space-y-3">
+            <Link
+              href="/platform/ai-agents"
+              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default mt-0.5 flex-shrink-0">
+                <GlobeIcon />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-base">
+                  AI Agents
+                </p>
+                <p className="text-gray-lightGrey text-sm mt-1">
+                  Automate workflows with intelligent agents
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/platform/flow-builder"
+              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default mt-0.5 flex-shrink-0">
+                <FlowBuilderIcon />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-base">
+                  Flow Builder
+                </p>
+                <p className="text-gray-lightGrey text-sm mt-1">
+                  Design and launch custom automations
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/platform/sidekick"
+              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default mt-0.5 flex-shrink-0">
+                <SidekickIcon />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-base">
+                  Sidekick
+                </p>
+                <p className="text-gray-lightGrey text-sm mt-1">
+                  Use natural language AI to streamline workflows
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/platform/integrations"
+              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default mt-0.5 flex-shrink-0">
+                <IntegrationsIcon />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-base">
+                  Integrations
+                </p>
+                <p className="text-gray-lightGrey text-sm mt-1">
+                  Customize workflows at scale with robust AI skills
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/trust"
+              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default mt-0.5 flex-shrink-0">
+                <SecurityIcon />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-base">
+                  Trust & Security
+                </p>
+                <p className="text-gray-lightGrey text-sm mt-1">
+                  Enterprise-grade security across the platform
+                </p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  // Mobile Solutions dropdown content
+  const MobileSolutionsDropdown = () => (
+    <div className="bg-white px-4 py-6">
+      <div className="flex flex-col gap-4">
+        {/* Hero section */}
+        <div className="px-3 py-3">
+          <div className="rounded-xl overflow-hidden mb-4">
+            <img
+              src="https://cdn.prod.website-files.com/628b58b14c93b9187d929a89/6876baa01c0df520fea814b4_50813364210fb7935bf403afc27d7008_Frame%20427321821%201.avif"
+              alt="Solutions visualization"
+              className="w-full h-[180px] object-cover object-top"
+            />
+          </div>
+          <h3 className="text-2xl font-normal text-blue-default mb-2">
+            Empower every
+            <br />
+            role with <span className="text-darkBlue">AI Agents</span>
+          </h3>
+          <p className="text-gray-lightGrey font-normal text-sm mb-4 leading-relaxed">
+            Deploy AI Agents across of enterprise to manage increased workloads
+            without additional staffing, enabling patient volume growth while
+            controlling costs.
+          </p>
+          <Link
+            href="/solutions"
+            className="inline-flex items-center gap-2 text-darkBlue font-medium text-sm hover:gap-3 transition-all"
+          >
+            Learn more about our AI Agents <ChevronRight size={16} />
+          </Link>
+        </div>
+
+        {/* Features with icons and descriptions */}
+        <div className="px-3 py-3">
+          <p className="text-xs font-normal text-gray-lightGrey mb-3">USE CASES</p>
+          <div className="space-y-3">
+            <Link
+              href="/solutions/patient-access"
+              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default mt-0.5 flex-shrink-0">
+                <GlobeIcon />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-base">
+                  Patient Access
+                </p>
+                <p className="text-gray-lightGrey text-sm mt-1">
+                  Streamline patient intake and scheduling
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/solutions/revenue-cycle"
+              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default mt-0.5 flex-shrink-0">
+                <FlowBuilderIcon />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-base">
+                  Revenue Cycle Management
+                </p>
+                <p className="text-gray-lightGrey text-sm mt-1">
+                  Optimize billing and revenue collection
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/solutions/care-operations"
+              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default mt-0.5 flex-shrink-0">
+                <SidekickIcon />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-base">
+                  Care Operations
+                </p>
+                <p className="text-gray-lightGrey text-sm mt-1">
+                  Enhance clinical workflow efficiency
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/solutions/contact-center"
+              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default mt-0.5 flex-shrink-0">
+                <IntegrationsIcon />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-base">
+                  Contact Center
+                </p>
+                <p className="text-gray-lightGrey text-sm mt-1">
+                  Improve patient communication and support
+                </p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  // Mobile Customers dropdown content
+  const MobileCustomersDropdown = () => (
+    <div className="bg-white px-4 py-6">
+      <div className="flex flex-col gap-4">
+        {/* Customer Stories */}
+        <div className="px-3 py-3">
+          <p className="text-xs font-normal text-gray-lightGrey mb-3">FEATURED CUSTOMER STORIES</p>
+          <div className="space-y-2">
+            <Link
+              href="/customers/security-health-plan"
+              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <p className="font-normal text-normalGray text-base">
+                Improving Disease Burden Documentation with AI Chart Review
+              </p>
+              <p className="text-darkBlue text-sm mt-1">
+                Read the full story <ChevronRight size={12} className="inline" />
+              </p>
+            </Link>
+            <Link
+              href="/customers/montage-health"
+              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <p className="font-normal text-normalGray text-base">
+                Unlocking the triple threat in healthcare
+              </p>
+              <p className="text-darkBlue text-sm mt-1">
+                Read the full story <ChevronRight size={12} className="inline" />
+              </p>
+            </Link>
+            <Link
+              href="/customers/musc-health"
+              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <p className="font-normal text-normalGray text-base">
+                Meeting patients where they are
+              </p>
+              <p className="text-darkBlue text-sm mt-1">
+                Read the full story <ChevronRight size={12} className="inline" />
+              </p>
+            </Link>
+          </div>
+        </div>
+        
+        {/* Partnerships */}
+        <div className="px-3 py-3 border-t border-gray-100">
+          <p className="text-xs font-normal text-gray-lightGrey mb-3">PARTNERSHIPS</p>
+          <div className="space-y-2">
+            <Link
+              href="/customer-stories"
+              className="flex items-center gap-3 px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default">
+                <CustomerStoriesIcon />
+              </div>
+              <p className="font-normal text-normalGray">Customer Stories</p>
+            </Link>
+            <Link
+              href="/build-with-PrimumAi"
+              className="flex items-center gap-3 px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default">
+                <BuildIcon />
+              </div>
+              <p className="font-normal text-normalGray">Build with PrimumAi</p>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  // Mobile Resources dropdown content
+  const MobileResourcesDropdown = () => (
+    <div className="bg-white px-4 py-6">
+      <div className="flex flex-col gap-4">
+        {/* Latest Resources */}
+        <div className="px-3 py-3">
+          <p className="text-xs font-normal text-gray-lightGrey mb-3">LATEST RESOURCES</p>
+          <div className="space-y-2">
+            <Link
+              href="/resources/referral-management"
+              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <p className="font-normal text-normalGray text-base">
+                How Optimized Referral Management Stops Revenue Drain
+              </p>
+              <p className="text-darkBlue text-sm mt-1">
+                Read the blog <ChevronRight size={12} className="inline" />
+              </p>
+            </Link>
+            <Link
+              href="/resources/triple-threat"
+              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <p className="font-normal text-normalGray text-base">
+                Unlocking the Triple Threat in Healthcare
+              </p>
+              <p className="text-darkBlue text-sm mt-1">
+                Read the blog <ChevronRight size={12} className="inline" />
+              </p>
+            </Link>
+            <Link
+              href="/resources/patient-access-insights"
+              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <p className="font-normal text-normalGray text-base">
+                Meeting Patients Where They Are
+              </p>
+              <p className="text-darkBlue text-sm mt-1">
+                Read the blog <ChevronRight size={12} className="inline" />
+              </p>
+            </Link>
+          </div>
+        </div>
+        
+        {/* Resources Hub */}
+        <div className="px-3 py-3 border-t border-gray-100">
+          <p className="text-xs font-normal text-gray-lightGrey mb-3">RESOURCES</p>
+          <div className="space-y-2">
+            <Link
+              href="/resources/hub"
+              className="flex items-center gap-3 px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default">
+                <CustomerStoriesIcon />
+              </div>
+              <p className="font-normal text-normalGray">Resources Hub</p>
+            </Link>
+          </div>
+        </div>
+        
+        {/* Company */}
+        <div className="px-3 py-3 border-t border-gray-100">
+          <p className="text-xs font-normal text-gray-lightGrey mb-3">COMPANY</p>
+          <div className="space-y-2">
+            <Link
+              href="/about"
+              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <p className="font-normal text-normalGray">About Us</p>
+            </Link>
+            <Link
+              href="/careers"
+              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <p className="font-normal text-normalGray">Careers</p>
+            </Link>
+            <Link
+              href="/contact"
+              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <p className="font-normal text-normalGray">Contact Us</p>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   // Customers dropdown content
   const CustomersDropdown = () => (
     <div className="bg-white rounded-2xl shadow-xl border border-gray-100 px-8 py-10">
@@ -610,7 +995,7 @@ const Navigation = () => {
     </div>
   );
 
-  const getDropdown = (key: string) => {
+  const getDesktopDropdown = (key: string) => {
     switch (key) {
       case "platform":
         return <PlatformDropdown />;
@@ -620,6 +1005,21 @@ const Navigation = () => {
         return <SolutionsDropdown />;
       case "resources":
         return <ResourcesDropdown />;
+      default:
+        return null;
+    }
+  };
+
+  const getMobileDropdown = (key: string) => {
+    switch (key) {
+      case "platform":
+        return <MobilePlatformDropdown />;
+      case "customers":
+        return <MobileCustomersDropdown />;
+      case "solutions":
+        return <MobileSolutionsDropdown />;
+      case "resources":
+        return <MobileResourcesDropdown />;
       default:
         return null;
     }
@@ -664,7 +1064,7 @@ const Navigation = () => {
               onMouseLeave={() => setActiveMenu(null)}
               className="absolute left-0 top-full w-full transition-all duration-200 animate-fade-in-down"
             >
-              <div className="container">{getDropdown(activeMenu)}</div>
+              <div className="container">{getDesktopDropdown(activeMenu)}</div>
             </div>
           )}
         </div>
@@ -674,7 +1074,7 @@ const Navigation = () => {
       <nav className="md:hidden sticky top-0 z-50 bg-white border-b border-navy-100">
         <div className="flex items-center justify-between h-16 px-4">
           {/* Logo */}
-          <Image alt="logo" src={"/images/logo.svg"} width={100} height={100} />
+          <Image alt="logo" src={"/images/logo.svg"} width={140} height={140} />
 
           {/* Mobile Menu Button */}
           <button
@@ -869,95 +1269,8 @@ const Navigation = () => {
                     />
                   </button>
                   {activeDropdown === item.key && (
-                    <div className="pl-4 py-2 space-y-2 border-l-2 border-blue ml-4">
-                      {item.key === "platform" && (
-                        <>
-                          <Link
-                            href="/platform/ai-agents"
-                            className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
-                          >
-                            AI Agents
-                          </Link>
-                          <Link
-                            href="/platform/flow-builder"
-                            className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
-                          >
-                            Flow Builder
-                          </Link>
-                          <Link
-                            href="/platform/sidekick"
-                            className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
-                          >
-                            Sidekick
-                          </Link>
-                          <Link
-                            href="/platform/integrations"
-                            className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
-                          >
-                            Integrations
-                          </Link>
-                        </>
-                      )}
-                      {item.key === "solutions" && (
-                        <>
-                          <Link
-                            href="/solutions/patient-access"
-                            className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
-                          >
-                            Patient Access
-                          </Link>
-                          <Link
-                            href="/solutions/revenue-cycle"
-                            className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
-                          >
-                            Revenue Cycle
-                          </Link>
-                          <Link
-                            href="/solutions/care-operations"
-                            className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
-                          >
-                            Care Operations
-                          </Link>
-                        </>
-                      )}
-                      {item.key === "customers" && (
-                        <>
-                          <Link
-                            href="/customer-stories"
-                            className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
-                          >
-                            Customer Stories
-                          </Link>
-                          <Link
-                            href="/build-with-PrimumAi"
-                            className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
-                          >
-                            Build with PrimumAi
-                          </Link>
-                        </>
-                      )}
-                      {item.key === "resources" && (
-                        <>
-                          <Link
-                            href="/resources/hub"
-                            className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
-                          >
-                            Resource Hub
-                          </Link>
-                          <Link
-                            href="/about"
-                            className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
-                          >
-                            About Us
-                          </Link>
-                          <Link
-                            href="/careers"
-                            className="block px-4 py-2 text-gray-600 hover:text-blue text-sm font-medium"
-                          >
-                            Careers
-                          </Link>
-                        </>
-                      )}
+                    <div className="mt-2">
+                      {getMobileDropdown(item.key)}
                     </div>
                   )}
                 </div>

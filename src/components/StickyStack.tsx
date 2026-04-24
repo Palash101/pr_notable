@@ -141,32 +141,34 @@ const CardRow = ({ card, idx }: { card: Card; idx: number }) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start transition-all duration-700 animate-fade-in">
       {/* Left - Card */}
-      <div className={'lg:order-1 relative'}>
-        {/* Sticky card with fixed height */}
-        <div 
-          className={`sticky top-24 h-[500px] rounded-2xl border ${colorScheme.borderColor} bg-white flex flex-col hover:${colorScheme.borderHoverColor} cursor-pointer transition-all duration-300`}
-          style={{ zIndex: cards.length - idx }} // Higher z-index for earlier cards
-        >
-          {/* Card Header - Always visible */}
-          <div className="absolute top-0 left-0 right-0 z-10 p-4 border-b border-gray-100 rounded-2xl bg-white">
-            <div className="flex items-center gap-3">
-              <SquareAsterisk className={`w-6 h-6 ${colorScheme.iconColor}`} />
-              <span className={`${colorScheme.iconColor} text-base font-normal`}>{card.label}</span>
-            </div>
-          </div>
-
-          {/* Card Content - Gets hidden when overlapped */}
-          <div className="flex-1 flex flex-col items-center justify-center p-8">
-            <div className={`mb-6 group-hover:scale-125 transition-transform duration-600 animate-pulse-soft`}>
-              <Image src={`${card.icon}`} alt={card.title} width={400} height={400} />
+      <div className={idx % 2 === 0 ? 'lg:order-1 relative' : 'lg:order-2 relative'}>
+        {/* Only first card should be sticky */}
+        {idx % 2 === 0 ? (
+          <div
+            className={`sticky top-24 h-[500px] rounded-2xl border ${colorScheme.borderColor} bg-white flex flex-col hover:${colorScheme.borderHoverColor} cursor-pointer transition-all duration-300`}
+            style={{ zIndex: 10 }}
+          >
+            {/* Card Header - Always visible */}
+            <div className="absolute top-0 left-0 right-0 z-10 p-4 border-b border-gray-100 bg-white">
+              <div className="flex items-center gap-3">
+                <SquareAsterisk className={`w-6 h-6 ${colorScheme.iconColor}`} />
+                <span className={`${colorScheme.iconColor} text-base font-normal`}>{card.label}</span>
+              </div>
             </div>
 
-            <div className="text-center">
-              <p className={`font-medium text-lg ${colorScheme.titleColor} mb-2`}>{card.title}</p>
-              <p className={`text-sm font-normal ${colorScheme.subtitleColor}`}>{card.subtitle}</p>
+            {/* Card Content - Gets hidden when overlapped */}
+            <div className="flex-1 flex flex-col items-center justify-center p-8">
+              <div className={`mb-6 group-hover:scale-125 transition-transform duration-600 animate-pulse-soft`}>
+                <Image src={`${card.icon}`} alt={card.title} width={400} height={400} />
+              </div>
+
+              <div className="text-center">
+                <p className={`font-medium text-lg ${colorScheme.titleColor} mb-2`}>{card.title}</p>
+                <p className={`text-sm font-normal ${colorScheme.subtitleColor}`}>{card.subtitle}</p>
+              </div>
             </div>
           </div>
-        </div>
+        ) : null}
       </div>
 
       {/* Right - Content */}
