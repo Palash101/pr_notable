@@ -6,10 +6,27 @@ export default {
   content: ["./src/**/*.{ts,tsx}", "./src/**/*.{css}"],
   prefix: "",
   theme: {
+    screens: {
+      xs: "320px", // ✅ now works everywhere
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1400px",
+    },
+
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: "0.25rem", // mobile
+        sm: "1rem",
+        md: "2rem",
+        lg: "2rem",
+        xl: "2rem",
+        "2xl": "2rem",
+      },
       // screens: {
+      //   xs: "320px",
       //   sm: "640px",
       //   md: "768px",
       //   lg: "1024px",
@@ -24,9 +41,14 @@ export default {
         poppins: ["Poppins", "sans-serif"],
       },
       fontSize: {
+        // 👉 New custom small sizes
+        text9: ["0.5625rem", { lineHeight: "0.75rem" }],
+        text10: ["0.625rem", { lineHeight: "0.875rem" }],
+        text11: ["0.6875rem", { lineHeight: "1rem" }],
         xs: ["0.75rem", { lineHeight: "1rem" }],
-        text15: ["15px", { lineHeight: "15px" }],
+        text13: ["13px", { lineHeight: "1rem" }],
         sm: ["0.875rem", { lineHeight: "1.25rem" }],
+        text15: ["15px", { lineHeight: "1.25rem" }],
         base: ["1rem", { lineHeight: "1.5rem" }],
         lg: ["1.125rem", { lineHeight: "1.75rem" }],
         xl: ["1.25rem", { lineHeight: "1.75rem" }],

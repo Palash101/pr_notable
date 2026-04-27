@@ -1,38 +1,49 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  ChevronRight,
+  VectorSquare,
+  HandHeart,
+  Recycle,
+  SquareUserRound,
+  Plane,
+} from "lucide-react";
 import Image from "next/image";
 import Button from "./ui/button";
 
+type IconProps = React.SVGProps<SVGSVGElement>;
+
 // Icons for Platform features
-const GlobeIcon = () => (
+const GlobeIcon = ({ className = "w-5 h-5", ...props }: IconProps) => (
   <svg
-    width="24"
-    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
+    className={className}
+    {...props}
   >
-    <circle cx="12" cy="12" r="10" />
-    <line x1="2" y1="12" x2="22" y2="12" />
+    <circle cx="12" cy="12" r="10" /> <line x1="2" y1="12" x2="22" y2="12" />{" "}
     <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
   </svg>
 );
 
-const FlowBuilderIcon = () => (
+const FlowBuilderIcon = ({ className = "w-5 h-5", ...props }: IconProps) => (
   <svg
-    width="24"
-    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
+    className={className}
+    {...props}
   >
     <rect x="3" y="3" width="7" height="7" rx="1" />
     <rect x="14" y="3" width="7" height="7" rx="1" />
@@ -45,16 +56,16 @@ const FlowBuilderIcon = () => (
   </svg>
 );
 
-const SidekickIcon = () => (
+const SidekickIcon = ({ className = "w-5 h-5", ...props }: IconProps) => (
   <svg
-    width="24"
-    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
+    className={className}
+    {...props}
   >
     <rect x="3" y="3" width="18" height="18" rx="2" />
     <path d="M9 9h0.01" />
@@ -63,16 +74,16 @@ const SidekickIcon = () => (
   </svg>
 );
 
-const IntegrationsIcon = () => (
+const IntegrationsIcon = ({ className = "w-5 h-5", ...props }: IconProps) => (
   <svg
-    width="24"
-    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
+    className={className}
+    {...props}
   >
     <path d="M12 2L2 7l10 5 10-5-10-5z" />
     <path d="M2 17l10 5 10-5" />
@@ -80,16 +91,16 @@ const IntegrationsIcon = () => (
   </svg>
 );
 
-const SecurityIcon = () => (
+const SecurityIcon = ({ className = "w-5 h-5", ...props }: IconProps) => (
   <svg
-    width="24"
-    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
+    className={className}
+    {...props}
   >
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
     <path d="M12 8v4" />
@@ -97,16 +108,19 @@ const SecurityIcon = () => (
   </svg>
 );
 
-const CustomerStoriesIcon = () => (
+const CustomerStoriesIcon = ({
+  className = "w-5 h-5",
+  ...props
+}: IconProps) => (
   <svg
-    width="24"
-    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
+    className={className}
+    {...props}
   >
     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
     <circle cx="9" cy="7" r="4" />
@@ -115,16 +129,16 @@ const CustomerStoriesIcon = () => (
   </svg>
 );
 
-const BuildIcon = () => (
+const BuildIcon = ({ className = "w-5 h-5", ...props }: IconProps) => (
   <svg
-    width="24"
-    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
+    className={className}
+    {...props}
   >
     <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
   </svg>
@@ -269,10 +283,93 @@ const Navigation = () => {
 
   // Mobile Platform dropdown content
   const MobilePlatformDropdown = () => (
-    <div className="bg-white px-4 py-6">
+    <div className="bg-white px-3 py-6">
       <div className="flex flex-col gap-4">
+        {/* Features with icons and descriptions */}
+        <div className="px-0 py-3">
+          <p className="text-xs font-normal text-gray-lightGrey">FEATURES</p>
+          <div className="space-y-3">
+            <Link
+              href="/platform/ai-agents"
+              className="flex items-center gap-3 px-2 py-3 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default mt-0.5 flex-shrink-0">
+                <GlobeIcon className="w-4 h-4" />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-xs">AI Agents</p>
+                <p className="text-gray-lightGrey text-text10 mt-1">
+                  Automate workflows with intelligent agents
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/platform/flow-builder"
+              className="flex items-start gap-3 px-2 py-3 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default mt-0.5 flex-shrink-0">
+                <FlowBuilderIcon className="w-4 h-4" />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-xs">
+                  Flow Builder
+                </p>
+                <p className="text-gray-lightGrey text-text10 mt-1">
+                  Design and launch custom automations
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/platform/sidekick"
+              className="flex items-start gap-3 px-2 py-3 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default mt-0.5 flex-shrink-0">
+                <SidekickIcon className="w-4 h-4" />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-xs">Sidekick</p>
+                <p className="text-gray-lightGrey text-text10 mt-1">
+                  Use natural language AI to streamline workflows
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/platform/integrations"
+              className="flex items-start gap-3 px-2 py-3 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default mt-0.5 flex-shrink-0">
+                <IntegrationsIcon className="w-4 h-4" />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-xs">
+                  Integrations
+                </p>
+                <p className="text-gray-lightGrey text-text10 mt-1">
+                  Customize workflows at scale with robust AI skills
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/trust"
+              className="flex items-start gap-3 px-2 py-3 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default mt-0.5 flex-shrink-0">
+                <SecurityIcon className="w-4 h-4" />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-xs">
+                  Trust & Security
+                </p>
+                <p className="text-gray-lightGrey text-text10 mt-1">
+                  Enterprise-grade security across the platform
+                </p>
+              </div>
+            </Link>
+          </div>
+        </div>
+
         {/* Hero section */}
-        <div className="px-3 py-3">
+        <div className="px-1 py-3">
           <div className="rounded-xl overflow-hidden mb-4">
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ksG7tg39ZTLNhDLJM4QK5OIO0UtT4A.png"
@@ -280,108 +377,21 @@ const Navigation = () => {
               className="w-full h-[180px] object-cover object-top"
             />
           </div>
-          <h3 className="text-2xl font-normal text-blue-default mb-2">
+          <h3 className="text-xl font-light text-blue-default mb-2">
             Build tomorrow&apos;s
             <br />
             workforce <span className="text-darkBlue">today</span>
           </h3>
-          <p className="text-gray-lightGrey font-normal text-sm mb-4 leading-relaxed">
+          <p className="text-gray-lightGrey font-normal text-xs mb-4 leading-relaxed">
             Empower your organization with intelligent automation that delivers
             proven ROI, enhances productivity, and supports sustainable growth.
           </p>
           <Link
             href="/platform"
-            className="inline-flex items-center gap-2 text-darkBlue font-medium text-sm hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-darkBlue font-normal text-xs hover:gap-3 transition-all"
           >
             Learn more about our Platform <ChevronRight size={16} />
           </Link>
-        </div>
-
-        {/* Features with icons and descriptions */}
-        <div className="px-3 py-3">
-          <p className="text-xs font-normal text-gray-lightGrey mb-3">FEATURES</p>
-          <div className="space-y-3">
-            <Link
-              href="/platform/ai-agents"
-              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
-            >
-              <div className="text-blue-default mt-0.5 flex-shrink-0">
-                <GlobeIcon />
-              </div>
-              <div>
-                <p className="font-normal text-normalGray text-base">
-                  AI Agents
-                </p>
-                <p className="text-gray-lightGrey text-sm mt-1">
-                  Automate workflows with intelligent agents
-                </p>
-              </div>
-            </Link>
-            <Link
-              href="/platform/flow-builder"
-              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
-            >
-              <div className="text-blue-default mt-0.5 flex-shrink-0">
-                <FlowBuilderIcon />
-              </div>
-              <div>
-                <p className="font-normal text-normalGray text-base">
-                  Flow Builder
-                </p>
-                <p className="text-gray-lightGrey text-sm mt-1">
-                  Design and launch custom automations
-                </p>
-              </div>
-            </Link>
-            <Link
-              href="/platform/sidekick"
-              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
-            >
-              <div className="text-blue-default mt-0.5 flex-shrink-0">
-                <SidekickIcon />
-              </div>
-              <div>
-                <p className="font-normal text-normalGray text-base">
-                  Sidekick
-                </p>
-                <p className="text-gray-lightGrey text-sm mt-1">
-                  Use natural language AI to streamline workflows
-                </p>
-              </div>
-            </Link>
-            <Link
-              href="/platform/integrations"
-              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
-            >
-              <div className="text-blue-default mt-0.5 flex-shrink-0">
-                <IntegrationsIcon />
-              </div>
-              <div>
-                <p className="font-normal text-normalGray text-base">
-                  Integrations
-                </p>
-                <p className="text-gray-lightGrey text-sm mt-1">
-                  Customize workflows at scale with robust AI skills
-                </p>
-              </div>
-            </Link>
-            <Link
-              href="/trust"
-              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
-            >
-              <div className="text-blue-default mt-0.5 flex-shrink-0">
-                <SecurityIcon />
-              </div>
-              <div>
-                <p className="font-normal text-normalGray text-base">
-                  Trust & Security
-                </p>
-                <p className="text-gray-lightGrey text-sm mt-1">
-                  Enterprise-grade security across the platform
-                </p>
-              </div>
-            </Link>
-          </div>
         </div>
       </div>
     </div>
@@ -389,104 +399,95 @@ const Navigation = () => {
 
   // Mobile Solutions dropdown content
   const MobileSolutionsDropdown = () => (
-    <div className="bg-white px-4 py-6">
+    <div className="bg-white px-3 py-6">
       <div className="flex flex-col gap-4">
+        {/* Features with icons and descriptions */}
+        <div className="px-0 py-3">
+          <p className="text-xs font-normal text-gray-lightGrey mb-3">
+            USE CASES
+          </p>
+          <div className="space-y-3">
+            <Link
+              href="/solutions/patient-access"
+              className="flex items-center gap-3 px-2 py-3 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="bg-gray-50 px-2 py-2 mt-0.5 flex-shrink-0">
+                <VectorSquare className="w-4 h-4 text-purple-dark" />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-xs">
+                  Patient Access
+                </p>
+              </div>
+            </Link>
+
+            <Link
+              href="/solutions/care-operations"
+              className="flex items-center gap-3 px-2 py-3 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="bg-gray-50 px-2 py-2 mt-0.5 flex-shrink-0">
+                <HandHeart className="w-4 h-4 text-orange-light" />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-xs">
+                  Care Operations
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/solutions/revenue-cycle"
+              className="flex items-center gap-3 px-2 py-3 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="bg-gray-50 px-2 py-2 mt-0.5 flex-shrink-0">
+                <Recycle className="w-4 h-4 text-green-light" />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-xs">
+                  Revenue Cycle Management
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/solutions/contact-center"
+              className="flex items-center gap-3 px-2 py-3 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="bg-gray-50 px-2 py-2 mt-0.5 flex-shrink-0">
+                <SquareUserRound className="w-4 h-4 text-purple-light" />
+              </div>
+              <div>
+                <p className="font-normal text-normalGray text-xs">
+                  Contact Center
+                </p>
+              </div>
+            </Link>
+          </div>
+        </div>
+
         {/* Hero section */}
-        <div className="px-3 py-3">
+        <div className="px-1 py-3">
           <div className="rounded-xl overflow-hidden mb-4">
             <img
               src="https://cdn.prod.website-files.com/628b58b14c93b9187d929a89/6876baa01c0df520fea814b4_50813364210fb7935bf403afc27d7008_Frame%20427321821%201.avif"
               alt="Solutions visualization"
-              className="w-full h-[180px] object-cover object-top"
+              className="w-full h-[100px] object-fit object-top"
             />
           </div>
-          <h3 className="text-2xl font-normal text-blue-default mb-2">
+          <h3 className="text-xl font-normal text-blue-default mb-2">
             Empower every
             <br />
             role with <span className="text-darkBlue">AI Agents</span>
           </h3>
-          <p className="text-gray-lightGrey font-normal text-sm mb-4 leading-relaxed">
+          <p className="text-gray-lightGrey font-normal text-xs mb-4 leading-relaxed">
             Deploy AI Agents across of enterprise to manage increased workloads
             without additional staffing, enabling patient volume growth while
             controlling costs.
           </p>
           <Link
             href="/solutions"
-            className="inline-flex items-center gap-2 text-darkBlue font-medium text-sm hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-darkBlue font-normal text-xs hover:gap-3 transition-all"
           >
             Learn more about our AI Agents <ChevronRight size={16} />
           </Link>
-        </div>
-
-        {/* Features with icons and descriptions */}
-        <div className="px-3 py-3">
-          <p className="text-xs font-normal text-gray-lightGrey mb-3">USE CASES</p>
-          <div className="space-y-3">
-            <Link
-              href="/solutions/patient-access"
-              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
-            >
-              <div className="text-blue-default mt-0.5 flex-shrink-0">
-                <GlobeIcon />
-              </div>
-              <div>
-                <p className="font-normal text-normalGray text-base">
-                  Patient Access
-                </p>
-                <p className="text-gray-lightGrey text-sm mt-1">
-                  Streamline patient intake and scheduling
-                </p>
-              </div>
-            </Link>
-            <Link
-              href="/solutions/revenue-cycle"
-              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
-            >
-              <div className="text-blue-default mt-0.5 flex-shrink-0">
-                <FlowBuilderIcon />
-              </div>
-              <div>
-                <p className="font-normal text-normalGray text-base">
-                  Revenue Cycle Management
-                </p>
-                <p className="text-gray-lightGrey text-sm mt-1">
-                  Optimize billing and revenue collection
-                </p>
-              </div>
-            </Link>
-            <Link
-              href="/solutions/care-operations"
-              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
-            >
-              <div className="text-blue-default mt-0.5 flex-shrink-0">
-                <SidekickIcon />
-              </div>
-              <div>
-                <p className="font-normal text-normalGray text-base">
-                  Care Operations
-                </p>
-                <p className="text-gray-lightGrey text-sm mt-1">
-                  Enhance clinical workflow efficiency
-                </p>
-              </div>
-            </Link>
-            <Link
-              href="/solutions/contact-center"
-              className="flex items-start gap-3 px-3 py-3 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
-            >
-              <div className="text-blue-default mt-0.5 flex-shrink-0">
-                <IntegrationsIcon />
-              </div>
-              <div>
-                <p className="font-normal text-normalGray text-base">
-                  Contact Center
-                </p>
-                <p className="text-gray-lightGrey text-sm mt-1">
-                  Improve patient communication and support
-                </p>
-              </div>
-            </Link>
-          </div>
         </div>
       </div>
     </div>
@@ -494,69 +495,77 @@ const Navigation = () => {
 
   // Mobile Customers dropdown content
   const MobileCustomersDropdown = () => (
-    <div className="bg-white px-4 py-6">
+    <div className="bg-white px-3 py-6">
       <div className="flex flex-col gap-4">
-        {/* Customer Stories */}
-        <div className="px-3 py-3">
-          <p className="text-xs font-normal text-gray-lightGrey mb-3">FEATURED CUSTOMER STORIES</p>
+        {/* Partnerships */}
+        <div className="px-0 py-3">
+          <p className="text-xs font-normal text-gray-lightGrey mb-3 uppercase">
+            Customer Stories
+          </p>
           <div className="space-y-2">
             <Link
-              href="/customers/security-health-plan"
-              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+              href="/customer-stories"
+              className="flex items-center gap-3 px-2 py-2 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
             >
-              <p className="font-normal text-normalGray text-base">
-                Improving Disease Burden Documentation with AI Chart Review
-              </p>
-              <p className="text-darkBlue text-sm mt-1">
-                Read the full story <ChevronRight size={12} className="inline" />
+              <div className="text-blue-default">
+                <HandHeart className="w-4 h-4 text-blue-default" />
+              </div>
+              <p className="font-normal text-xs text-normalGray">
+                Customer Stories
               </p>
             </Link>
             <Link
-              href="/customers/montage-health"
-              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+              href="/build-with-PrimumAi"
+              className="flex items-center gap-3 px-2 py-2 text-normalGray hover:text-blue rounded-lg hover:bg-gray-50"
             >
-              <p className="font-normal text-normalGray text-base">
-                Unlocking the triple threat in healthcare
-              </p>
-              <p className="text-darkBlue text-sm mt-1">
-                Read the full story <ChevronRight size={12} className="inline" />
-              </p>
-            </Link>
-            <Link
-              href="/customers/musc-health"
-              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
-            >
-              <p className="font-normal text-normalGray text-base">
-                Meeting patients where they are
-              </p>
-              <p className="text-darkBlue text-sm mt-1">
-                Read the full story <ChevronRight size={12} className="inline" />
+              <div className="text-blue-default">
+                <Plane className="w-4 h-4 text-blue-default" />
+              </div>
+              <p className="font-normal text-xs text-normalGray">
+                Build with PrimumAi
               </p>
             </Link>
           </div>
         </div>
-        
-        {/* Partnerships */}
-        <div className="px-3 py-3 border-t border-gray-100">
-          <p className="text-xs font-normal text-gray-lightGrey mb-3">PARTNERSHIPS</p>
+
+        {/* Customer Stories */}
+        <div className="px-0 py-3">
           <div className="space-y-2">
             <Link
-              href="/customer-stories"
-              className="flex items-center gap-3 px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+              href="/customers/security-health-plan"
+              className="block px-2 py-2 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
             >
-              <div className="text-blue-default">
-                <CustomerStoriesIcon />
-              </div>
-              <p className="font-normal text-normalGray">Customer Stories</p>
+              <p className="font-normal text-normalGray text-xs">
+                Improving Disease Burden Documentation with AI Chart Review
+              </p>
+              <p className="text-darkBlue text-text11 mt-1">
+                Read the full story{" "}
+                <ChevronRight size={12} className="inline" />
+              </p>
             </Link>
             <Link
-              href="/build-with-PrimumAi"
-              className="flex items-center gap-3 px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+              href="/customers/montage-health"
+              className="block px-2 py-2 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
             >
-              <div className="text-blue-default">
-                <BuildIcon />
-              </div>
-              <p className="font-normal text-normalGray">Build with PrimumAi</p>
+              <p className="font-normal text-normalGray text-xs">
+                Unlocking the triple threat in healthcare
+              </p>
+              <p className="text-darkBlue text-text11 mt-1">
+                Read the full story{" "}
+                <ChevronRight size={12} className="inline" />
+              </p>
+            </Link>
+            <Link
+              href="/customers/musc-health"
+              className="block px-2 py-2 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <p className="font-normal text-normalGray text-xs">
+                Meeting patients where they are
+              </p>
+              <p className="text-darkBlue text-text11 mt-1">
+                Read the full story{" "}
+                <ChevronRight size={12} className="inline" />
+              </p>
             </Link>
           </div>
         </div>
@@ -568,83 +577,97 @@ const Navigation = () => {
   const MobileResourcesDropdown = () => (
     <div className="bg-white px-4 py-6">
       <div className="flex flex-col gap-4">
+        {/* Resources Hub */}
+        <div className="px-0 py-3">
+          <p className="text-text10 font-normal text-gray-lightGrey mb-3">
+            RESOURCES
+          </p>
+          <div className="space-y-2">
+            <Link
+              href="/resources/hub"
+              className="flex items-center gap-3 px-2 py-2 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <div className="text-blue-default">
+                <GlobeIcon className="w-4 h-4 text-blue-default" />
+              </div>
+              <p className="font-normal text-xs text-normalGray">
+                Resources Hub
+              </p>
+            </Link>
+          </div>
+        </div>
+
+        <p className="font-normal text-blue-default text-xs py-3">
+          Noteworthy to You
+        </p>
+
+        {/* Company */}
+        <div className="px-0 py-3">
+          <p className="text-text10 font-normal text-gray-lightGrey mb-3">
+            COMPANY
+          </p>
+          <div className="space-y-2">
+            <Link
+              href="/about"
+              className="block px-0 py-2 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <p className="font-normal text-blue-default text-xs">About Us</p>
+            </Link>
+            <Link
+              href="/careers"
+              className="block px-0 py-2 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <p className="font-normal text-blue-default text-xs">Careers</p>
+            </Link>
+            <Link
+              href="/contact"
+              className="block px-0 py-2 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+            >
+              <p className="font-normal text-blue-default text-xs">
+                Contact Us
+              </p>
+            </Link>
+          </div>
+        </div>
+
         {/* Latest Resources */}
-        <div className="px-3 py-3">
-          <p className="text-xs font-normal text-gray-lightGrey mb-3">LATEST RESOURCES</p>
+        <div className="px-0 py-3">
+          <p className="text-xs font-normal text-gray-lightGrey mb-3 uppercase">
+            LATEST RESOURCES
+          </p>
           <div className="space-y-2">
             <Link
               href="/resources/referral-management"
-              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+              className="block px-0 py-2 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
             >
-              <p className="font-normal text-normalGray text-base">
+              <p className="font-normal text-normalGray text-xs">
                 How Optimized Referral Management Stops Revenue Drain
               </p>
-              <p className="text-darkBlue text-sm mt-1">
+              <p className="text-darkBlue text-text10 mt-1">
                 Read the blog <ChevronRight size={12} className="inline" />
               </p>
             </Link>
             <Link
               href="/resources/triple-threat"
-              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+              className="block px-0 py-2 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
             >
-              <p className="font-normal text-normalGray text-base">
+              <p className="font-normal text-normalGray text-xs">
                 Unlocking the Triple Threat in Healthcare
               </p>
-              <p className="text-darkBlue text-sm mt-1">
+              <p className="text-darkBlue text-text10 mt-1">
                 Read the blog <ChevronRight size={12} className="inline" />
               </p>
             </Link>
             <Link
               href="/resources/patient-access-insights"
-              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
+              className="block px-0 py-2 text-normalGray hover:text-blue text-sm rounded-lg hover:bg-gray-50"
             >
-              <p className="font-normal text-normalGray text-base">
+              <p className="font-normal text-normalGray text-xs">
                 Meeting Patients Where They Are
               </p>
-              <p className="text-darkBlue text-sm mt-1">
+              <p className="text-darkBlue text-text10 mt-1">
                 Read the blog <ChevronRight size={12} className="inline" />
               </p>
-            </Link>
-          </div>
-        </div>
-        
-        {/* Resources Hub */}
-        <div className="px-3 py-3 border-t border-gray-100">
-          <p className="text-xs font-normal text-gray-lightGrey mb-3">RESOURCES</p>
-          <div className="space-y-2">
-            <Link
-              href="/resources/hub"
-              className="flex items-center gap-3 px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
-            >
-              <div className="text-blue-default">
-                <CustomerStoriesIcon />
-              </div>
-              <p className="font-normal text-normalGray">Resources Hub</p>
-            </Link>
-          </div>
-        </div>
-        
-        {/* Company */}
-        <div className="px-3 py-3 border-t border-gray-100">
-          <p className="text-xs font-normal text-gray-lightGrey mb-3">COMPANY</p>
-          <div className="space-y-2">
-            <Link
-              href="/about"
-              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
-            >
-              <p className="font-normal text-normalGray">About Us</p>
-            </Link>
-            <Link
-              href="/careers"
-              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
-            >
-              <p className="font-normal text-normalGray">Careers</p>
-            </Link>
-            <Link
-              href="/contact"
-              className="block px-3 py-2 text-gray-600 hover:text-blue text-sm rounded-lg hover:bg-gray-50"
-            >
-              <p className="font-normal text-normalGray">Contact Us</p>
             </Link>
           </div>
         </div>
@@ -1081,177 +1104,18 @@ const Navigation = () => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 hover:bg-navy-50 rounded-lg transition-colors"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? (
+              <X size={24} className="text-blue-default" />
+            ) : (
+              <Menu size={24} className="text-blue-default" />
+            )}
           </button>
         </div>
 
         {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
-          <div className="border-t border-navy-100 bg-white animate-fade-in-down">
-            {/* <div className="px-4 py-4 space-y-2">
-              Platform
-              <div>
-                <button
-                  onClick={() =>
-                    setActiveDropdown(
-                      activeDropdown === "platform" ? null : "platform",
-                    )
-                  }
-                  className="w-full flex items-center justify-between px-4 py-3 text-navy-800 font-medium hover:bg-navy-50 rounded-lg transition-colors"
-                >
-                  Platform
-                  <ChevronDown
-                    size={16}
-                    className={`transform transition-transform ${activeDropdown === "platform" ? "rotate-180" : ""}`}
-                  />
-                </button>
-                {activeDropdown === "platform" && (
-                  <div className="pl-4 py-2 space-y-2 border-l-2 border-purple">
-                    <Link
-                      href="/ai-agent-workforce/overview"
-                      className="block px-4 py-2 text-navy-600 hover:text-purple text-sm font-medium"
-                    >
-                      AI Agents
-                    </Link>
-                    <Link
-                      href="/platform/flow-builder"
-                      className="block px-4 py-2 text-navy-600 hover:text-purple text-sm font-medium"
-                    >
-                      Flow Builder
-                    </Link>
-                    <Link
-                      href="/platform/sidekick"
-                      className="block px-4 py-2 text-navy-600 hover:text-purple text-sm font-medium"
-                    >
-                      Sidekick
-                    </Link>
-                    <Link
-                      href="/platform/integrations"
-                      className="block px-4 py-2 text-navy-600 hover:text-purple text-sm font-medium"
-                    >
-                      Integrations
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              Solutions
-              <div>
-                <button
-                  onClick={() =>
-                    setActiveDropdown(
-                      activeDropdown === "solutions" ? null : "solutions",
-                    )
-                  }
-                  className="w-full flex items-center justify-between px-4 py-3 text-navy-800 font-medium hover:bg-navy-50 rounded-lg transition-colors"
-                >
-                  Solutions
-                  <ChevronDown
-                    size={16}
-                    className={`transform transition-transform ${activeDropdown === "solutions" ? "rotate-180" : ""}`}
-                  />
-                </button>
-                {activeDropdown === "solutions" && (
-                  <div className="pl-4 py-2 space-y-2 border-l-2 border-purple">
-                    <Link
-                      href="/use-cases/access"
-                      className="block px-4 py-2 text-navy-600 hover:text-purple text-sm font-medium"
-                    >
-                      Patient Access
-                    </Link>
-                    <Link
-                      href="/use-cases/rcm"
-                      className="block px-4 py-2 text-navy-600 hover:text-purple text-sm font-medium"
-                    >
-                      Revenue Cycle Management
-                    </Link>
-                    <Link
-                      href="/use-cases/care-ops"
-                      className="block px-4 py-2 text-navy-600 hover:text-purple text-sm font-medium"
-                    >
-                      Care Operations
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              Customers
-              <div>
-                <button
-                  onClick={() =>
-                    setActiveDropdown(
-                      activeDropdown === "customers" ? null : "customers",
-                    )
-                  }
-                  className="w-full flex items-center justify-between px-4 py-3 text-navy-800 font-medium hover:bg-navy-50 rounded-lg transition-colors"
-                >
-                  Customers
-                  <ChevronDown
-                    size={16}
-                    className={`transform transition-transform ${activeDropdown === "customers" ? "rotate-180" : ""}`}
-                  />
-                </button>
-                {activeDropdown === "customers" && (
-                  <div className="pl-4 py-2 space-y-2 border-l-2 border-purple">
-                    <Link
-                      href="/customer-stories"
-                      className="block px-4 py-2 text-navy-600 hover:text-purple text-sm font-medium"
-                    >
-                      Customer Stories
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              Resources
-              <div>
-                <button
-                  onClick={() =>
-                    setActiveDropdown(
-                      activeDropdown === "resources" ? null : "resources",
-                    )
-                  }
-                  className="w-full flex items-center justify-between px-4 py-3 text-navy-800 font-medium hover:bg-navy-50 rounded-lg transition-colors"
-                >
-                  Resources
-                  <ChevronDown
-                    size={16}
-                    className={`transform transition-transform ${activeDropdown === "resources" ? "rotate-180" : ""}`}
-                  />
-                </button>
-                {activeDropdown === "resources" && (
-                  <div className="pl-4 py-2 space-y-2 border-l-2 border-purple">
-                    <Link
-                      href="/resource-center"
-                      className="block px-4 py-2 text-navy-600 hover:text-purple text-sm font-medium"
-                    >
-                      Resource Hub
-                    </Link>
-                    <Link
-                      href="/about-us"
-                      className="block px-4 py-2 text-navy-600 hover:text-purple text-sm font-medium"
-                    >
-                      About us
-                    </Link>
-                    <Link
-                      href="/careers"
-                      className="block px-4 py-2 text-navy-600 hover:text-purple text-sm font-medium"
-                    >
-                      Careers
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              <Link
-                href="/request-demo"
-                className="block w-full text-center btn-primary mt-4"
-              >
-                Request a demo
-              </Link>
-            </div> */}
-
-            <div className="px-4 py-4 space-y-2">
+          <div className="fixed top-16 left-0 right-0 bottom-0 z-50 bg-white flex flex-col animate-fade-in-down">
+            <div className="flex-1 overflow-y-auto px-3 py-4 space-y-2">
               {navItems.map((item) => (
                 <div key={item.key}>
                   <button
@@ -1260,23 +1124,25 @@ const Navigation = () => {
                         activeDropdown === item.key ? null : item.key,
                       )
                     }
-                    className="w-full flex items-center justify-between px-4 py-3 text-blue-default font-medium hover:bg-gray-50 rounded-lg transition-colors"
+                    className="w-full flex items-center justify-between px-3 py-3 text-base text-normalGray hover:bg-cyan-200 font-normal transition-colors"
                   >
                     {item.label}
                     <ChevronDown
-                      size={16}
-                      className={`transform transition-transform ${activeDropdown === item.key ? "rotate-180" : ""}`}
+                      size={18}
+                      className={`transform transition-transform text-blue-default ${activeDropdown === item.key ? "rotate-180" : ""}`}
                     />
                   </button>
                   {activeDropdown === item.key && (
-                    <div className="mt-2">
-                      {getMobileDropdown(item.key)}
-                    </div>
+                    <div className="mt-2">{getMobileDropdown(item.key)}</div>
                   )}
                 </div>
               ))}
+            </div>
 
-              <Button variant="outline">Request a demo</Button>
+            <div className="p-4 border-t border-gray-300 bg-gray-50 sticky bottom-0">
+              <Button variant="default" className="text-white  w-full text-xs">
+                Request a demo
+              </Button>
             </div>
           </div>
         )}

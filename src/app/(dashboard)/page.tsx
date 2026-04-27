@@ -24,7 +24,7 @@ export default function Dashboard() {
       <PlatformFeature />
 
       {/* Insights & Stats */}
-      <Insights analyticsData={true} />
+      {/* <Insights analyticsData={true} /> */}
 
       <Resources />
     </>

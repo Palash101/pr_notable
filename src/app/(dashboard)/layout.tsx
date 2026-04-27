@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 export default function DashboardLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <div className="bg-white min-h-screen">
@@ -12,5 +12,5 @@ export default function DashboardLayout({
       {children}
       <Footer />
     </div>
-  )
+  );
 }
